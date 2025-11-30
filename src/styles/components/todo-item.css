@@ -1,4 +1,4 @@
-.todo-item{
+.todo-item {
     display: flex;
     align-items: center;
     column-gap: 12px;
@@ -7,17 +7,17 @@
     border-radius: var(--border-radius);
     transition-duration: var(--transition-duration);
 
-    &:hover{
+    &:hover {
         background-color: var(--color-gray-1);
     }
 
-    &.is-disappearing{
+    &.is-disappearing {
         opacity: 0;
-        translate: 0 75%;
+        translate: 0 -75%;
         transition-duration: calc(var(--transition-duration) * 2);
         pointer-events: none;
 
-        & ~ .todo-item{
+        & ~ .todo-item {
             translate: 0 calc((100% + var(--todoListRowGap)) * -1);
             transition-delay: var(--transition-duration);
             transition-duration: var(--transition-duration);
@@ -26,7 +26,7 @@
     }
 }
 
-.todo-item__checkbox{
+.todo-item__checkbox {
     flex-shrink: 0;
     appearance: none;
     position: relative;
@@ -36,19 +36,19 @@
     border: 1px solid var(--color-gray-4);
     border-radius: 4px;
 
-    &:not(:checked) {
-        &::after {
-            opacity: 0;
-        }
-    }
-
     &:checked {
         background-color: var(--color-dark-2);
         border-color: var(--color-dark-2);
 
-        & + .todo-item__label{
+        & + .todo-item__label {
             color: var(--color-gray-4);
             text-decoration: line-through;
+        }
+    }
+
+    &:not(:checked) {
+        &::after {
+            opacity: 0;
         }
     }
 
@@ -60,16 +60,16 @@
         translate: -50% -50%;
         width: 16px;
         height: 16px;
-        background: url("../../icons/icon-check_white.svg") center/contain no-repeat;
+        background: url('../../icons/icon-check_white.svg') center/contain no-repeat;
     }
 }
 
-.todo-item__label{
+.todo-item__label {
     width: 100%;
     pointer-events: none;
 }
 
-.todo__delete-all-button{
+.todo-item__delete-button {
     flex-shrink: 0;
     display: inline-flex;
     justify-content: center;
@@ -83,12 +83,12 @@
     border: none;
     border-radius: inherit;
 
-    &:hover{
+    &:hover {
         color: var(--color-white);
         background-color: var(--color-dark-1);
     }
 
-    &:active{
+    &:active {
         scale: 1.05;
     }
 
