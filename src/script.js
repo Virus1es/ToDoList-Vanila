@@ -92,7 +92,6 @@ class Todo{
                     ${title}
                 </label>
                 <button class="todo-item__delete-button"
-                        type="button"
                         aria-label="Delete"
                         title="Delete"
                         data-js-todo-item-delete-button
@@ -230,7 +229,6 @@ class Todo{
         this.deleteAllButtonElement.addEventListener('click', this.onDeleteAllButtonClick);
         this.listElement.addEventListener('click', this.onClick);
         this.listElement.addEventListener('change', this.onChange);
-
     }
 }
 

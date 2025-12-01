@@ -29,11 +29,11 @@
 
     &:hover,
     &:focus {
-        color: var(--color-dark-2);
+        border-color: var(--color-dark-2);
     }
 
     &:focus{
-        color: var(--color-gray-1);
+        background-color: var(--color-gray-1);
         outline: none;
     }
 
