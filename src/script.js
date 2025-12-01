@@ -112,7 +112,7 @@ class Todo{
                     : '';
     }
 
-    addItem(){
+    addItem(title){
         this.state.items.push({
             id: crypto?.randomUUID() ?? Date.now().toString(),
             title,
@@ -131,11 +131,11 @@ class Todo{
     }
 
     toggleCheckedState(id){
-        this.state.items.map((item) => {
+        this.state.items = this.state.items.map((item) => {
             if(item.id === id) {
                 return{
                     ...item,
-                    isChecked: !item.isChecked
+                    isChecked: !item.isChecked,
                 }
             }
 
