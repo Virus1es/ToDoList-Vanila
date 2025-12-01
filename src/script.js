@@ -80,6 +80,7 @@ class Todo{
         this.listElement.innerHTML = items.map(({id, title, isChecked}) => `
             <li class="todo-item todo__item" data-js-todo-item>
                 <input class="todo-item__checkbox"
+                       style="cursor: pointer"
                        id="${id}"
                        type="checkbox"
                        ${isChecked ? 'checked' : ''}
